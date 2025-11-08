@@ -16,7 +16,7 @@ export default function TopBar() {
             <span>aykitchencabinets@gmail.com</span>
           </a>
         </div>
-        <div className="flex items-center gap-3">
+        <div className="hidden md:flex items-center gap-3">
           <span className="text-xs sm:text-sm">Follow Us:</span>
           <div className="flex gap-3">
             <a href="https://www.facebook.com/aycabinetscalgary/" target="_blank" rel="noopener noreferrer" className="hover:text-gray-200 transition-colors" aria-label="Facebook">
