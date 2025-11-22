@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import Image from 'next/image';
 
 export default function AboutUsPage() {
   const [activeTab, setActiveTab] = useState('mission');
@@ -32,7 +33,7 @@ export default function AboutUsPage() {
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
         </svg>
       ),
-      color: 'from-green-500 to-emerald-500',
+      color: 'from-primary/40 to-primary',
     },
     {
       value: '15+',
@@ -42,7 +43,7 @@ export default function AboutUsPage() {
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
         </svg>
       ),
-      color: 'from-blue-500 to-cyan-500',
+      color: 'from-primary to-primary-dark',
     },
     {
       value: '98%',
@@ -52,7 +53,7 @@ export default function AboutUsPage() {
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
         </svg>
       ),
-      color: 'from-orange-500 to-red-500',
+      color: 'from-primary-light to-primary',
     },
     {
       value: '50+',
@@ -62,7 +63,7 @@ export default function AboutUsPage() {
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
         </svg>
       ),
-      color: 'from-purple-500 to-pink-500',
+      color: 'from-primary/60 to-primary-dark',
     },
   ];
 
@@ -75,7 +76,7 @@ export default function AboutUsPage() {
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
         </svg>
       ),
-      color: 'from-amber-500 to-orange-500',
+      color: 'from-primary/40 to-primary',
     },
     {
       title: 'Customer First',
@@ -85,7 +86,7 @@ export default function AboutUsPage() {
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
         </svg>
       ),
-      color: 'from-rose-500 to-pink-500',
+      color: 'from-primary to-primary-dark',
     },
     {
       title: 'Innovation',
@@ -95,7 +96,7 @@ export default function AboutUsPage() {
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
         </svg>
       ),
-      color: 'from-yellow-500 to-amber-500',
+      color: 'from-primary-light to-primary',
     },
     {
       title: 'Sustainability',
@@ -105,7 +106,7 @@ export default function AboutUsPage() {
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
         </svg>
       ),
-      color: 'from-green-500 to-teal-500',
+      color: 'from-primary/60 to-primary-dark',
     },
   ];
 
@@ -228,11 +229,12 @@ export default function AboutUsPage() {
                 <div className="absolute inset-0 bg-primary/40 rounded-3xl transform rotate-6 scale-100 animate-siri-wave"></div>
 
                 {/* Main Image */}
-                <div className="relative bg-white rounded-3xl overflow-hidden shadow-2xl">
-                  <img
-                    src="https://images.unsplash.com/photo-1556911220-bff31c812dba?w=800&q=80"
+                <div className="relative bg-white rounded-3xl overflow-hidden shadow-2xl aspect-4/3">
+                  <Image
+                    src="/images/gallery/img5.jpeg"
                     alt="A&Y Cabinets Premium Custom Cabinetry Workshop"
-                    className="w-full h-full object-cover aspect-[4/3]"
+                    fill
+                    className="object-cover"
                   />
                 </div>
 

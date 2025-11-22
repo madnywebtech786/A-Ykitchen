@@ -2,8 +2,8 @@ export const servicesData = [
   {
     id: 'bespoke-cabinet-transformations',
     slug: 'bespoke-cabinet-transformations',
-    shortTitle: 'Bespoke Cabinet Transformations',
-    fullTitle: 'Bespoke Cabinet Transformations & Custom Modifications',
+    shortTitle: 'Cabinet Modifications',
+    fullTitle: 'Cabinet Modifications & Custom Transformations',
 
     // Short description for landing page
     shortDescription: 'Transform your existing cabinets with precision modifications tailored to your space. Expert craftsmanship meets innovative design solutions.',
@@ -59,14 +59,14 @@ export const servicesData = [
       </svg>
     ),
     color: 'from-primary/40 to-primary',
-    image: '/images/services/cabinet-transformations.jpg'
+    image: '/images/services/Cabinet-Modifications.png'
   },
 
   {
     id: 'contemporary-door-renaissance',
     slug: 'contemporary-door-renaissance',
-    shortTitle: 'Contemporary Door Renaissance',
-    fullTitle: 'Contemporary Door Renaissance & Modern Upgrades',
+    shortTitle: 'Door Replacement',
+    fullTitle: 'Modern Door Replacement & Upgrades',
 
     shortDescription: 'Revitalize your kitchen with sleek, modern cabinet doors. Choose from premium materials and contemporary finishes that define sophistication.',
 
@@ -120,14 +120,14 @@ export const servicesData = [
       </svg>
     ),
     color: 'from-primary to-primary-dark',
-    image: '/images/services/modern-doors.jpg'
+    image: '/images/services/Door-Replacement.png'
   },
 
   {
     id: 'artisan-cabinet-refinishing',
     slug: 'artisan-cabinet-refinishing',
-    shortTitle: 'Artisan Cabinet Refinishing',
-    fullTitle: 'Artisan Cabinet Refinishing & Surface Restoration',
+    shortTitle: 'Cabinet Refinishing',
+    fullTitle: 'Cabinet Refinishing & Restoration',
 
     shortDescription: 'Restore your cabinets to pristine condition with professional refinishing. Premium stains, paints, and protective coatings for lasting beauty.',
 
@@ -180,15 +180,15 @@ export const servicesData = [
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01" />
       </svg>
     ),
-    color: 'from-amber-500 to-amber-700',
-    image: '/images/services/refinishing.jpg'
+    color: 'from-primary-light to-primary',
+    image: '/images/services/Cabinet-Refinishing.png'
   },
 
   {
     id: 'visionary-kitchen-creation',
     slug: 'visionary-kitchen-creation',
-    shortTitle: 'Visionary Kitchen Creation',
-    fullTitle: 'Visionary Kitchen Creation & Complete Installation',
+    shortTitle: 'Kitchen Design & Installation',
+    fullTitle: 'Complete Kitchen Design & Installation',
 
     shortDescription: 'Complete kitchen transformations from concept to completion. Custom cabinetry, innovative layouts, and seamless project management.',
 
@@ -242,15 +242,15 @@ export const servicesData = [
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
       </svg>
     ),
-    color: 'from-blue-500 to-blue-700',
-    image: '/images/services/kitchen-design.jpg'
+    color: 'from-primary to-primary-dark',
+    image: '/images/services/Kitchen-Design-Installation.png'
   },
 
   {
     id: 'premium-surfaces-storage',
     slug: 'premium-surfaces-storage',
-    shortTitle: 'Premium Surfaces & Storage',
-    fullTitle: 'Premium Surfaces & Intelligent Storage Solutions',
+    shortTitle: 'Countertops & Storage',
+    fullTitle: 'Countertops & Storage Solutions',
 
     shortDescription: 'Elegant countertops paired with innovative storage systems. Luxury materials meet functional excellence for the ultimate kitchen experience.',
 
@@ -304,15 +304,15 @@ export const servicesData = [
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
       </svg>
     ),
-    color: 'from-green-500 to-green-700',
-    image: '/images/services/countertops-storage.jpg'
+    color: 'from-primary/60 to-primary-dark',
+    image: '/images/services/Countertops-Storage.png'
   },
 
   {
     id: 'luxury-bathroom-transformation',
     slug: 'luxury-bathroom-transformation',
-    shortTitle: 'Luxury Bathroom Transformation',
-    fullTitle: 'Luxury Bathroom Transformation & Spa Renovation',
+    shortTitle: 'Bathroom Renovation',
+    fullTitle: 'Bathroom Renovation & Remodeling',
 
     shortDescription: 'Transform your bathroom into a personal sanctuary. Custom vanities, premium storage, and spa-inspired design excellence.',
 
@@ -366,8 +366,72 @@ export const servicesData = [
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
       </svg>
     ),
-    color: 'from-purple-500 to-purple-700',
-    image: '/images/services/bathroom-renovation.jpg'
+    color: 'from-primary-light to-primary-dark',
+    image: '/images/services/Bathroom-Renovation.png'
+  },
+
+  {
+    id: 'cabinet-painting',
+    slug: 'cabinet-painting',
+    shortTitle: 'Cabinet Painting',
+    fullTitle: 'Professional Cabinet Painting & Finishing',
+
+    shortDescription: 'Give your cabinets a fresh new look with professional painting services. High-quality finishes that transform and protect your cabinetry.',
+
+    detailedDescription: `Revitalize your kitchen or bathroom with our expert cabinet painting services. We use premium paints and proven techniques to deliver a flawless, durable finish that looks professionally done. Whether you want to update the color scheme or completely transform your space, our painting service offers an affordable alternative to replacement while achieving stunning results.`,
+
+    features: [
+      'Professional surface preparation',
+      'Premium quality paints',
+      'Custom color matching',
+      'Durable protective finish'
+    ],
+
+    detailedFeatures: [
+      {
+        title: 'Expert Surface Preparation',
+        description: 'Thorough cleaning, degreasing, sanding, and priming to ensure optimal paint adhesion and a smooth, long-lasting finish.'
+      },
+      {
+        title: 'Premium Paint Systems',
+        description: 'We use professional-grade paints specifically formulated for cabinetry, ensuring superior durability, coverage, and color retention.'
+      },
+      {
+        title: 'Custom Color Consultation',
+        description: 'Work with our color experts to select the perfect shade that complements your space, or match existing colors precisely.'
+      },
+      {
+        title: 'Multi-Layer Protection',
+        description: 'Advanced finishing techniques with protective topcoats that resist scratches, moisture, and daily wear while maintaining beauty.'
+      }
+    ],
+
+    benefits: [
+      'Cost-effective cabinet transformation',
+      'Quick turnaround time',
+      'Minimal disruption to your home',
+      'Eco-friendly option vs replacement',
+      'Professional-grade results',
+      'Wide range of color options'
+    ],
+
+    process: [
+      'Color consultation and selection',
+      'Cabinet removal and preparation',
+      'Professional cleaning and sanding',
+      'Primer application',
+      'Multiple paint coats',
+      'Protective topcoat application',
+      'Reinstallation and final inspection'
+    ],
+
+    icon: (
+      <svg className="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01" />
+      </svg>
+    ),
+    color: 'from-primary to-primary-light',
+    image: '/images/services/Cabinet-Painting.png'
   }
 ];
 

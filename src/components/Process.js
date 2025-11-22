@@ -4,20 +4,20 @@ export default function Process() {
   const steps = [
     {
       number: '01',
-      title: 'Consultation',
-      description: 'We begin with an in-depth consultation to understand your vision, needs, and budget. Our experts assess your space and discuss design possibilities.',
-      buttonText: 'Book Free Consultation',
+      title: 'Free Estimate',
+      description: 'We begin with a complimentary consultation to understand your vision, needs, and budget. Our experts assess your space and provide a detailed estimate.',
+      buttonText: 'Book Free Estimate',
       icon: (
         <svg className="w-full h-full" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z" />
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
         </svg>
       ),
     },
     {
       number: '02',
-      title: 'Design',
-      description: 'Our designers create detailed 3D renderings and plans, ensuring every element aligns with your style and functional requirements.',
-      buttonText: 'View Design Gallery',
+      title: 'Choose Material',
+      description: 'Browse through our wide selection of premium materials, finishes, and hardware options. We help you choose the perfect combination for your space.',
+      buttonText: 'View Materials',
       icon: (
         <svg className="w-full h-full" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01" />
@@ -26,20 +26,31 @@ export default function Process() {
     },
     {
       number: '03',
-      title: 'Build',
-      description: 'Using premium materials and expert craftsmanship, we construct your custom cabinetry with precision and attention to every detail.',
-      buttonText: 'Explore Craftsmanship',
+      title: 'Receive Quote',
+      description: 'Get a comprehensive quote based on your material choices and project scope. Transparent pricing with no hidden fees or surprises.',
+      buttonText: 'Request Quote',
       icon: (
         <svg className="w-full h-full" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
         </svg>
       ),
     },
     {
       number: '04',
-      title: 'Install',
-      description: 'Professional installation ensures flawless integration into your space. We handle everything, leaving you with a stunning finished product.',
-      buttonText: 'Schedule Installation',
+      title: '3D Drawing',
+      description: 'Our designers create detailed 3D renderings of your project. Visualize your dream space before we start building.',
+      buttonText: 'View Sample 3D',
+      icon: (
+        <svg className="w-full h-full" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+        </svg>
+      ),
+    },
+    {
+      number: '05',
+      title: 'Design & Installation',
+      description: 'We custom build your cabinetry with precision craftsmanship, then professionally install everything for a perfect finish.',
+      buttonText: 'See Our Work',
       icon: (
         <svg className="w-full h-full" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
@@ -110,7 +121,7 @@ export default function Process() {
 
         {/* Process Steps */}
         <div className="relative max-w-7xl mx-auto">
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {steps.map((step, index) => (
               <div
                 key={index}

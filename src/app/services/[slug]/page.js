@@ -2,6 +2,7 @@
 
 import { useParams } from 'next/navigation';
 import Link from 'next/link';
+import Image from 'next/image';
 import { getServiceBySlug, servicesData } from '@/data/servicesData';
 import TopBar from '@/components/TopBar';
 import Navbar from '@/components/Navbar';
@@ -92,11 +93,12 @@ export default function ServiceDetailPage() {
                 <div className="absolute inset-0 bg-primary/40 rounded-3xl transform -rotate-6 scale-100 animate-siri-wave"></div>
 
                 {/* Main Image Container */}
-                <div className="relative bg-white rounded-3xl overflow-hidden shadow-2xl">
-                  <img
-                    src={`https://images.unsplash.com/photo-1556911220-bff31c812dba?w=800&q=80`}
+                <div className="relative bg-white rounded-3xl overflow-hidden shadow-2xl aspect-4/3">
+                  <Image
+                    src={service.image}
                     alt={service.shortTitle}
-                    className="w-full h-full object-cover aspect-[4/3]"
+                    fill
+                    className="object-cover"
                   />
                 </div>
               </div>

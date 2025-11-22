@@ -3,15 +3,17 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
-  --primary: #8c0c0c;
-  --primary-light: #a33c3c;
-  --primary-dark: #700909;
+  --primary: #be1f27;
+  --secondary: #f31e24;
+  --primary-light: #e04851;
+  --primary-dark: #8e171d;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-primary: var(--primary);
+  --color-secondary: var(--secondary);
   --color-primary-light: var(--primary-light);
   --color-primary-dark: var(--primary-dark);
   --font-sans: var(--font-geist-sans);
@@ -159,7 +161,7 @@ body {
 }
 
 .gradient-text {
-  background: linear-gradient(135deg, #700909 0%, #8c0c0c 50%, #a33c3c 100%);
+  background: linear-gradient(135deg, #8e171d 0%, #be1f27 50%, #f31e24 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;

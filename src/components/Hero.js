@@ -1,5 +1,7 @@
 'use client';
 
+import Image from 'next/image';
+
 export default function Hero() {
   return (
     <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-b from-white via-gray-50 to-white">
@@ -63,7 +65,7 @@ export default function Hero() {
                 <div className="text-sm text-gray-600">Years Experience</div>
               </div>
               <div className="text-center md:text-left">
-                <div className="text-3xl font-bold text-primary">500+</div>
+                <div className="text-3xl font-bold text-primary">5000+</div>
                 <div className="text-sm text-gray-600">Projects Done</div>
               </div>
               <div className="text-center md:text-left">
@@ -77,15 +79,13 @@ export default function Hero() {
           <div className="relative animate-slide-in-right">
             <div className="relative z-10">
               {/* Main Image Container */}
-              <div className="relative z-10 rounded-3xl overflow-hidden shadow-2xl">
-                <div className="aspect-[4/5] bg-gradient-to-br from-primary/20 via-primary/10 to-transparent flex items-center justify-center">
-                  <div className="text-center p-8">
-                    <svg className="w-32 h-32 mx-auto text-primary/30 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
-                    </svg>
-                    <p className="text-gray-400 text-sm">Premium Kitchen Cabinet</p>
-                  </div>
-                </div>
+              <div className="relative z-10 rounded-3xl overflow-hidden shadow-2xl aspect-4/5">
+                <Image
+                  src="/images/gallery/img10.jpeg"
+                  alt="Premium Custom Kitchen Cabinet"
+                  fill
+                  className="object-cover"
+                />
               </div>
 
               {/* Decorative Elements */}

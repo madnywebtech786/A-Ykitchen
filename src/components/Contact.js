@@ -7,9 +7,11 @@ export default function Contact() {
     name: '',
     email: '',
     phone: '',
-    service: '',
     message: '',
   });
+
+  const [imageFiles, setImageFiles] = useState([]);
+  const [imagePreviews, setImagePreviews] = useState([]);
 
   const handleChange = (e) => {
     setFormData({
@@ -18,10 +20,32 @@ export default function Contact() {
     });
   };
 
+  const handleImageChange = (e) => {
+    const files = Array.from(e.target.files);
+    if (files.length > 0) {
+      const newFiles = [...imageFiles, ...files];
+      setImageFiles(newFiles);
+
+      // Create previews for new files
+      files.forEach((file) => {
+        const reader = new FileReader();
+        reader.onloadend = () => {
+          setImagePreviews((prev) => [...prev, reader.result]);
+        };
+        reader.readAsDataURL(file);
+      });
+    }
+  };
+
+  const removeImage = (index) => {
+    setImageFiles((prev) => prev.filter((_, i) => i !== index));
+    setImagePreviews((prev) => prev.filter((_, i) => i !== index));
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
     // Handle form submission
-    console.log('Form submitted:', formData);
+    console.log('Form submitted:', formData, imageFiles);
   };
 
   const contactInfo = [
@@ -140,16 +164,16 @@ export default function Contact() {
             <div className="bg-white rounded-3xl shadow-xl overflow-hidden border border-gray-200 h-full flex flex-col">
               {/* Map Container */}
               <div className="relative flex-1 bg-gray-100" style={{ minHeight: '400px' }}>
-                {/* Embedded Google Map or Map Placeholder */}
+                {/* Embedded Google Map */}
                 <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d184552.30943582457!2d-79.51814374999999!3d43.718371!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89d4cb90d7c63ba5%3A0x323555502ab4c477!2sToronto%2C%20ON%2C%20Canada!5e0!3m2!1sen!2s!4v1234567890"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2505.8577!2d-113.9606!3d51.0870!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNTHCsDA1JzEzLjIiTiAxMTPCsDU3JzM4LjIiVw!5e0!3m2!1sen!2sca!4v1234567890"
                   width="100%"
                   height="100%"
                   style={{ border: 0 }}
                   allowFullScreen=""
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
-                  className=" transition-all duration-500"
+                  className="transition-all duration-500"
                 ></iframe>
 
                 {/* Location Badge */}
@@ -173,7 +197,7 @@ export default function Contact() {
                     </div>
                   </div>
                   <h4 className="text-xs font-bold text-gray-900 mb-0.5">Call</h4>
-                  <p className="text-xs text-gray-600 text-center">1862347658967</p>
+                  <p className="text-xs text-gray-600 text-center">403 966 9190</p>
                 </div>
 
                 {/* Email */}
@@ -186,7 +210,7 @@ export default function Contact() {
                     </div>
                   </div>
                   <h4 className="text-xs font-bold text-gray-900 mb-0.5">Email</h4>
-                  <p className="text-xs text-gray-600 text-center">prelest@gmail.com</p>
+                  <p className="text-xs text-gray-600 text-center">aykitchencabinets@gmail.com</p>
                 </div>
 
                 {/* Location */}
@@ -200,7 +224,7 @@ export default function Contact() {
                     </div>
                   </div>
                   <h4 className="text-xs font-bold text-gray-900 mb-0.5">Location</h4>
-                  <p className="text-xs text-gray-600 text-center">Texas, USA</p>
+                  <p className="text-xs text-gray-600 text-center">Calgary, AB</p>
                 </div>
               </div>
             </div>
@@ -236,6 +260,68 @@ export default function Contact() {
                     className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-lg focus:border-primary focus:bg-white transition-all duration-300 outline-none text-gray-900"
                     placeholder="Email address"
                   />
+                </div>
+
+                {/* Phone Input */}
+                <div className="relative">
+                  <input
+                    type="tel"
+                    id="phone"
+                    name="phone"
+                    required
+                    value={formData.phone}
+                    onChange={handleChange}
+                    className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-lg focus:border-primary focus:bg-white transition-all duration-300 outline-none text-gray-900"
+                    placeholder="Phone number"
+                  />
+                </div>
+
+                {/* Image Upload */}
+                <div className="relative">
+                  <label htmlFor="image-upload" className="block text-sm font-semibold text-gray-700 mb-2">
+                    Upload Images (Optional)
+                  </label>
+                  <div className="relative">
+                    {/* Upload Button */}
+                    <label
+                      htmlFor="image-upload"
+                      className="w-full flex items-center justify-center gap-2 px-4 py-3 bg-gray-50 border-2 border-dashed border-gray-300 rounded-lg hover:border-primary hover:bg-primary/5 transition-all duration-300 cursor-pointer mb-3"
+                    >
+                      <svg className="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                      </svg>
+                      <span className="text-sm text-gray-600">Click to upload images</span>
+                    </label>
+
+                    {/* Image Previews Grid */}
+                    {imagePreviews.length > 0 && (
+                      <div className="grid grid-cols-4 gap-2">
+                        {imagePreviews.map((preview, index) => (
+                          <div key={index} className="relative w-20 h-20 rounded-lg overflow-hidden border-2 border-primary group">
+                            <img src={preview} alt={`Preview ${index + 1}`} className="w-full h-full object-cover" />
+                            <button
+                              type="button"
+                              onClick={() => removeImage(index)}
+                              className="absolute top-1 right-1 w-6 h-6 bg-red-500 hover:bg-red-600 text-white rounded-full flex items-center justify-center transition-colors shadow-lg opacity-0 group-hover:opacity-100"
+                            >
+                              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                              </svg>
+                            </button>
+                          </div>
+                        ))}
+                      </div>
+                    )}
+
+                    <input
+                      type="file"
+                      id="image-upload"
+                      accept="image/*"
+                      multiple
+                      onChange={handleImageChange}
+                      className="hidden"
+                    />
+                  </div>
                 </div>
 
                 {/* Message Textarea */}

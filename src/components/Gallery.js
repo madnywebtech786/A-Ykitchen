@@ -1,71 +1,63 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 
 export default function Gallery() {
   const kitchenProjects = [
     {
       id: 1,
-      title: 'Contemporary White Kitchen',
-      description: 'Sleek white cabinets with stainless steel accents',
-      gradient: 'from-slate-500 via-gray-600 to-zinc-700',
-      accent: 'from-blue-400 to-cyan-500',
+      title: 'Modern Kitchen Design',
+      description: 'Custom cabinetry with elegant finishes',
+      image: '/images/gallery/img1.jpeg',
     },
     {
       id: 2,
-      title: 'Industrial Modern Kitchen',
-      description: 'Bold dark cabinets with modern hardware',
-      gradient: 'from-gray-700 via-slate-800 to-gray-900',
-      accent: 'from-orange-400 to-red-500',
+      title: 'Contemporary Kitchen',
+      description: 'Sleek design with premium materials',
+      image: '/images/gallery/img2.jpeg',
     },
     {
       id: 3,
-      title: 'Traditional Oak Kitchen',
-      description: 'Warm oak cabinets with classic detailing',
-      gradient: 'from-amber-600 via-orange-700 to-red-800',
-      accent: 'from-yellow-400 to-amber-500',
+      title: 'Classic Kitchen',
+      description: 'Timeless elegance meets functionality',
+      image: '/images/gallery/img3.jpeg',
     },
     {
       id: 4,
-      title: 'Victorian Style Kitchen',
-      description: 'Elegant raised panel cabinets with crown molding',
-      gradient: 'from-rose-700 via-red-800 to-rose-900',
-      accent: 'from-pink-400 to-rose-500',
+      title: 'Luxury Kitchen',
+      description: 'High-end cabinetry and craftsmanship',
+      image: '/images/gallery/img4.jpeg',
     },
     {
       id: 5,
-      title: 'High-Gloss Luxury Kitchen',
-      description: 'Premium high-gloss finish with gold accents',
-      gradient: 'from-purple-700 via-violet-800 to-purple-900',
-      accent: 'from-purple-400 to-pink-500',
+      title: 'Traditional Kitchen',
+      description: 'Warm wood tones and classic details',
+      image: '/images/gallery/img5.jpeg',
     },
     {
       id: 6,
-      title: 'Marble & Walnut Kitchen',
-      description: 'Rich walnut cabinets with marble countertops',
-      gradient: 'from-teal-700 via-cyan-800 to-blue-900',
-      accent: 'from-teal-400 to-cyan-500',
+      title: 'Modern Classic Kitchen',
+      description: 'Beautiful blend of style and function',
+      image: '/images/gallery/img6.jpeg',
     },
     {
       id: 7,
-      title: 'Scandinavian Kitchen',
-      description: 'Clean lines with natural wood tones',
-      gradient: 'from-stone-500 via-gray-600 to-slate-700',
-      accent: 'from-green-400 to-emerald-500',
+      title: 'Designer Kitchen',
+      description: 'Premium finishes and custom features',
+      image: '/images/gallery/img7.jpeg',
     },
     {
       id: 8,
-      title: 'Japanese Zen Kitchen',
-      description: 'Minimalist design with functional elegance',
-      gradient: 'from-zinc-600 via-gray-700 to-stone-800',
-      accent: 'from-lime-400 to-green-500',
+      title: 'Elegant Kitchen',
+      description: 'Sophisticated design with attention to detail',
+      image: '/images/gallery/img8.jpeg',
     },
     {
       id: 9,
-      title: 'Coastal Modern Kitchen',
-      description: 'Light and airy design with coastal elements',
-      gradient: 'from-sky-600 via-blue-700 to-indigo-800',
-      accent: 'from-cyan-400 to-blue-500',
+      title: 'Custom Kitchen',
+      description: 'Tailored solutions for your dream space',
+      image: '/images/gallery/img9.jpeg',
     },
   ];
 
@@ -119,30 +111,32 @@ export default function Gallery() {
                 {/* Card Container */}
                 <div className="relative w-full h-[350px] rounded-2xl overflow-hidden border-2 border-gray-200 bg-white hover:border-primary/40 hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2">
 
-                  {/* Gradient Background */}
-                  <div className={`absolute inset-0 bg-gradient-to-br ${project.gradient} opacity-80`}></div>
+                  {/* Image */}
+                  <Image
+                    src={project.image}
+                    alt={project.title}
+                    fill
+                    className="object-cover"
+                  />
 
-                  {/* Subtle Pattern Overlay */}
-                  <div className="absolute inset-0 bg-[linear-gradient(45deg,transparent_48%,rgba(255,255,255,0.05)_50%,transparent_52%)] bg-[size:20px_20px]"></div>
-
-                  {/* Hover Glow Effect */}
-                  <div className={`absolute inset-0 bg-gradient-to-t ${project.accent} opacity-0 group-hover:opacity-30 transition-opacity duration-500`}></div>
+                  {/* Glow Effect */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent transition-opacity duration-500"></div>
 
                   {/* Content Overlay */}
-                  <div className="absolute inset-0 p-8 flex flex-col justify-end bg-gradient-to-t from-black/80 via-black/40 to-transparent">
-                    <div className="transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+                  <div className="absolute inset-0 p-8 flex flex-col justify-end bg-gradient-to-t from-black/50 via-black/40 to-transparent">
+                    <div className="relative">
                       <h3 className="text-2xl md:text-3xl font-bold text-white mb-3 group-hover:text-primary transition-colors">
                         {project.title}
                       </h3>
-                      <p className="text-gray-200 text-sm mb-4 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                      <p className="text-gray-200 text-sm mb-4">
                         {project.description}
                       </p>
 
-                      {/* Futuristic Corner Accents */}
-                      <div className="absolute top-4 left-4 w-10 h-10 border-l-2 border-t-2 border-white/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                      <div className="absolute top-4 right-4 w-10 h-10 border-r-2 border-t-2 border-white/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                      <div className="absolute bottom-4 left-4 w-10 h-10 border-l-2 border-b-2 border-white/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                      <div className="absolute bottom-4 right-4 w-10 h-10 border-r-2 border-b-2 border-white/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                      {/* Futuristic Corner Accents - Always Visible */}
+                      <div className="absolute -top-6 -left-6 w-8 h-8 border-l-2 border-t-2 border-white/80 transition-all duration-300 group-hover:border-primary"></div>
+                      <div className="absolute -top-6 -right-6 w-8 h-8 border-r-2 border-t-2 border-white/80 transition-all duration-300 group-hover:border-primary"></div>
+                      <div className="absolute -bottom-6 -left-6 w-8 h-8 border-l-2 border-b-2 border-white/80 transition-all duration-300 group-hover:border-primary"></div>
+                      <div className="absolute -bottom-6 -right-6 w-8 h-8 border-r-2 border-b-2 border-white/80 transition-all duration-300 group-hover:border-primary"></div>
                     </div>
                   </div>
 

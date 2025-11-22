@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { servicesData } from '@/data/servicesData';
 
 export default function Services() {
@@ -62,14 +63,24 @@ export default function Services() {
               className="group relative bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border border-gray-100 animate-fade-in-up"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
-              {/* Gradient Header */}
-              <div className={`h-2 bg-gradient-to-r ${service.color}`}></div>
+              {/* Service Image */}
+              <div className="relative h-56 overflow-hidden">
+                <Image
+                  src={service.image}
+                  alt={service.shortTitle}
+                  fill
+                  className="object-cover group-hover:scale-110 transition-transform duration-500"
+                />
+                {/* Gradient Overlay */}
+                <div className={`absolute inset-0 bg-gradient-to-t ${service.color} opacity-20`}></div>
 
-              <div className="p-8">
-                {/* Icon */}
-                <div className={`w-16 h-16 bg-gradient-to-br ${service.color} rounded-2xl flex items-center justify-center mb-6 text-white group-hover:scale-110 transition-transform duration-300 shadow-lg`}>
+                {/* Icon Badge */}
+                <div className={`absolute top-4 right-4 w-14 h-14 bg-gradient-to-br ${service.color} rounded-xl flex items-center justify-center text-white shadow-xl group-hover:scale-110 group-hover:rotate-6 transition-all duration-300`}>
                   {service.icon}
                 </div>
+              </div>
+
+              <div className="p-8">
 
                 {/* Title */}
                 <h3 className="text-2xl font-bold text-gray-900 mb-3 group-hover:text-primary transition-colors">

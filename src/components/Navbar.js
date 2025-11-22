@@ -20,9 +20,10 @@ export default function Navbar() {
   }, []);
 
   const navLinks = [
-    { name: 'Home', href: '/#home' },
+    { name: 'Home', href: '/' },
     { name: 'About', href: '/about' },
     { name: 'FAQs', href: '/faqs' },
+    { name: 'Portfolio', href: '/portfolio' },
     { name: 'Contact', href: '/#contact' },
   ];
 
@@ -41,7 +42,7 @@ export default function Navbar() {
                   alt="A&Y Cabinets Logo"
                   width={180}
                   height={80}
-                  className="h-12 w-auto"
+                  className="h-16 w-auto"
                   priority
                 />
               </div>
