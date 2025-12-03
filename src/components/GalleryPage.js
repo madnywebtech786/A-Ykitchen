@@ -8,7 +8,7 @@ export default function GalleryPage() {
   const [filter, setFilter] = useState('all');
 
   // Generate gallery images array (gallery1.jpeg to gallery84.jpeg)
-  const totalImages = 84;
+  const totalImages = 83;
   const galleryImages = Array.from({ length: totalImages }, (_, i) => ({
     id: i + 1,
     src: `/images/allImgs/gallery${i + 1}.jpeg`,

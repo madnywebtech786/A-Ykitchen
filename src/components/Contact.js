@@ -56,8 +56,8 @@ export default function Contact() {
         </svg>
       ),
       title: 'Phone',
-      value: '403 966 9190',
-      link: 'tel:+14039669190',
+      value: '403-890-9222 / 403 966 9190',
+      link: 'tel:+14038909222',
     },
     {
       icon: (
@@ -166,7 +166,7 @@ export default function Contact() {
               <div className="relative flex-1 bg-gray-100" style={{ minHeight: '400px' }}>
                 {/* Embedded Google Map */}
                 <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2505.8577!2d-113.9606!3d51.0870!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNTHCsDA1JzEzLjIiTiAxMTPCsDU3JzM4LjIiVw!5e0!3m2!1sen!2sca!4v1234567890"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2504.8577!2d-113.9606!3d51.0870!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x537170b7b3b3b3b3%3A0x0!2sUnit%204122%203961%2052nd%20Ave%20NE%2C%20Calgary%2C%20AB%20T3J%200J8!5e0!3m2!1sen!2sca!4v1234567890"
                   width="100%"
                   height="100%"
                   style={{ border: 0 }}
@@ -197,6 +197,7 @@ export default function Contact() {
                     </div>
                   </div>
                   <h4 className="text-xs font-bold text-gray-900 mb-0.5">Call</h4>
+                  <p className="text-xs text-gray-600 text-center">403-890-9222</p>
                   <p className="text-xs text-gray-600 text-center">403 966 9190</p>
                 </div>
 
@@ -224,7 +225,8 @@ export default function Contact() {
                     </div>
                   </div>
                   <h4 className="text-xs font-bold text-gray-900 mb-0.5">Location</h4>
-                  <p className="text-xs text-gray-600 text-center">Calgary, AB</p>
+                  <p className="text-xs text-gray-600 text-center">Unit 4122 3961 52nd Ave NE</p>
+                  <p className="text-xs text-gray-600 text-center">Calgary AB, T3J 0J8</p>
                 </div>
               </div>
             </div>

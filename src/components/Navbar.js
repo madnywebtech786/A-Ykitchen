@@ -1,9 +1,9 @@
-'use client';
+"use client";
 
-import { useState, useEffect } from 'react';
-import Link from 'next/link';
-import Image from 'next/image';
-import { servicesData } from '@/data/servicesData';
+import { useState, useEffect } from "react";
+import Link from "next/link";
+import Image from "next/image";
+import { servicesData } from "@/data/servicesData";
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -15,22 +15,24 @@ export default function Navbar() {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20);
     };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const navLinks = [
-    { name: 'Home', href: '/' },
-    { name: 'About', href: '/about' },
-    { name: 'FAQs', href: '/faqs' },
-    { name: 'Portfolio', href: '/portfolio' },
-    { name: 'Contact', href: '/#contact' },
+    { name: "Home", href: "/" },
+    { name: "About", href: "/about" },
+    { name: "FAQs", href: "/faqs" },
+    { name: "Portfolio", href: "/portfolio" },
+    { name: "Contact", href: "/#contact" },
   ];
 
   return (
-    <nav className={`fixed w-full z-40 top-7 transition-all duration-300 ${
-      isScrolled ? 'bg-white shadow-lg py-3' : 'bg-white py-4'
-    }`}>
+    <nav
+      className={`fixed w-full z-40 top-15 md:top-7 transition-all duration-300 ${
+        isScrolled ? "bg-white shadow-lg py-3" : "bg-white py-4"
+      }`}
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center">
           {/* Logo */}
@@ -40,9 +42,9 @@ export default function Navbar() {
                 <Image
                   src="/images/logo.png"
                   alt="A&Y Cabinets Logo"
-                  width={180}
+                  width={200}
                   height={80}
-                  className="h-16 w-auto"
+                  className="h-20 w-auto"
                   priority
                 />
               </div>
@@ -71,14 +73,25 @@ export default function Navbar() {
               <button className="text-gray-700 hover:text-primary font-medium transition-all duration-300 relative flex items-center gap-1 group">
                 Services
                 <svg
-                  className={`w-4 h-4 transition-transform duration-300 ${isServicesOpen ? 'rotate-180' : ''}`}
+                  className={`w-4 h-4 transition-transform duration-300 ${
+                    isServicesOpen ? "rotate-180" : ""
+                  }`}
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
                 >
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M19 9l-7 7-7-7"
+                  />
                 </svg>
-                <span className={`absolute bottom-0 left-0 h-0.5 bg-primary transition-all duration-300 ${isServicesOpen ? 'w-full' : 'w-0 group-hover:w-full'}`}></span>
+                <span
+                  className={`absolute bottom-0 left-0 h-0.5 bg-primary transition-all duration-300 ${
+                    isServicesOpen ? "w-full" : "w-0 group-hover:w-full"
+                  }`}
+                ></span>
               </button>
 
               {/* Dropdown Menu */}
@@ -97,7 +110,6 @@ export default function Navbar() {
                           </p>
                         </Link>
                       ))}
-               
                     </div>
                   </div>
                 </div>
@@ -113,14 +125,25 @@ export default function Navbar() {
               <button className="text-gray-700 hover:text-primary font-medium transition-all duration-300 relative flex items-center gap-1 group">
                 Industries
                 <svg
-                  className={`w-4 h-4 transition-transform duration-300 ${isIndustriesOpen ? 'rotate-180' : ''}`}
+                  className={`w-4 h-4 transition-transform duration-300 ${
+                    isIndustriesOpen ? "rotate-180" : ""
+                  }`}
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
                 >
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M19 9l-7 7-7-7"
+                  />
                 </svg>
-                <span className={`absolute bottom-0 left-0 h-0.5 bg-primary transition-all duration-300 ${isIndustriesOpen ? 'w-full' : 'w-0 group-hover:w-full'}`}></span>
+                <span
+                  className={`absolute bottom-0 left-0 h-0.5 bg-primary transition-all duration-300 ${
+                    isIndustriesOpen ? "w-full" : "w-0 group-hover:w-full"
+                  }`}
+                ></span>
               </button>
 
               {/* Dropdown Menu */}
@@ -132,7 +155,6 @@ export default function Navbar() {
                         href="/industries/residential"
                         className="flex items-center gap-3 px-4 py-2.5 hover:bg-gray-50 transition-colors group/item"
                       >
-                
                         <div>
                           <p className="text-sm font-medium text-gray-700 group-hover/item:text-primary transition-colors">
                             Residential
@@ -143,7 +165,6 @@ export default function Navbar() {
                         href="/industries/commercial"
                         className="flex items-center gap-3 px-4 py-2.5 hover:bg-gray-50 transition-colors group/item"
                       >
-                  
                         <div>
                           <p className="text-sm font-medium text-gray-700 group-hover/item:text-primary transition-colors">
                             Commercial
@@ -159,12 +180,12 @@ export default function Navbar() {
 
           {/* CTA Button */}
           <div className="hidden md:block">
-            <a
+            <Link
               href="/#contact"
               className="bg-primary hover:bg-primary-dark text-white px-6 py-2.5 rounded-full font-medium transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"
             >
               Get a Quote
-            </a>
+            </Link>
           </div>
 
           {/* Mobile Menu Button */}
@@ -221,12 +242,19 @@ export default function Navbar() {
                 >
                   Services
                   <svg
-                    className={`w-4 h-4 transition-transform duration-300 ${isServicesOpen ? 'rotate-180' : ''}`}
+                    className={`w-4 h-4 transition-transform duration-300 ${
+                      isServicesOpen ? "rotate-180" : ""
+                    }`}
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
                   >
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M19 9l-7 7-7-7"
+                    />
                   </svg>
                 </button>
                 {isServicesOpen && (
@@ -238,10 +266,10 @@ export default function Navbar() {
                         className="flex items-center gap-2 text-gray-600 hover:text-primary hover:bg-gray-50 px-4 py-2 rounded-lg text-sm transition-all duration-300"
                         onClick={() => setIsMobileMenuOpen(false)}
                       >
-                        <div className={`w-6 h-6 bg-gradient-to-br ${service.color} rounded flex items-center justify-center flex-shrink-0 text-white`}>
-                          <div className="w-3 h-3">
-                            {service.icon}
-                          </div>
+                        <div
+                          className={`w-6 h-6 bg-gradient-to-br ${service.color} rounded flex items-center justify-center flex-shrink-0 text-white`}
+                        >
+                          <div className="w-3 h-3">{service.icon}</div>
                         </div>
                         {service.shortTitle}
                       </Link>
@@ -258,12 +286,19 @@ export default function Navbar() {
                 >
                   Industries
                   <svg
-                    className={`w-4 h-4 transition-transform duration-300 ${isIndustriesOpen ? 'rotate-180' : ''}`}
+                    className={`w-4 h-4 transition-transform duration-300 ${
+                      isIndustriesOpen ? "rotate-180" : ""
+                    }`}
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
                   >
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M19 9l-7 7-7-7"
+                    />
                   </svg>
                 </button>
                 {isIndustriesOpen && (
@@ -274,8 +309,18 @@ export default function Navbar() {
                       onClick={() => setIsMobileMenuOpen(false)}
                     >
                       <div className="w-6 h-6 bg-gradient-to-br from-blue-500 to-cyan-500 rounded flex items-center justify-center flex-shrink-0">
-                        <svg className="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+                        <svg
+                          className="w-3 h-3 text-white"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"
+                          />
                         </svg>
                       </div>
                       Residential
@@ -286,8 +331,18 @@ export default function Navbar() {
                       onClick={() => setIsMobileMenuOpen(false)}
                     >
                       <div className="w-6 h-6 bg-gradient-to-br from-purple-500 to-pink-500 rounded flex items-center justify-center flex-shrink-0">
-                        <svg className="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                        <svg
+                          className="w-3 h-3 text-white"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"
+                          />
                         </svg>
                       </div>
                       Commercial
@@ -296,13 +351,13 @@ export default function Navbar() {
                 )}
               </div>
 
-              <a
+              <Link
                 href="/#contact"
                 className="bg-primary hover:bg-primary-dark text-white px-4 py-2 rounded-lg font-medium transition-all duration-300 text-center"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 Get a Quote
-              </a>
+              </Link>
             </div>
           </div>
         )}

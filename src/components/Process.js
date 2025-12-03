@@ -154,19 +154,8 @@ export default function Process() {
                       {step.description}
                     </p>
 
-                    {/* Button Container with curved bottom */}
+                    {/* Curved Bottom Background - Matches card color */}
                     <div className="relative -mx-6 mt-4">
-                      {/* Button */}
-                      <div className="px-6 pb-3">
-                        <button className="group/btn w-full bg-gradient-to-r from-primary to-primary-dark hover:from-primary-dark hover:to-primary text-white px-4 py-3 rounded-full font-bold text-sm transition-all duration-300 transform hover:scale-105  flex items-center justify-center gap-2">
-                          <span>{step.buttonText}</span>
-                          <svg className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                          </svg>
-                        </button>
-                      </div>
-
-                      {/* Curved Bottom Background - Matches card color */}
                       <div className="h-12 bg-gradient-to-r from-primary via-primary-light to-primary rounded-b-3xl relative overflow-hidden">
                         {/* Inner curve cutout */}
                         <div className="absolute top-0 left-0 right-0 h-8 bg-white rounded-b-full"></div>

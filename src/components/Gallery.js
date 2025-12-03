@@ -169,7 +169,7 @@ export default function Gallery() {
               </p>
 
               <Link
-                href="/gallery"
+                href="/portfolio"
                 className="inline-flex items-center gap-3 bg-white text-primary px-10 py-5 rounded-2xl font-bold transition-all duration-300 transform hover:scale-105 text-lg group shadow-xl hover:shadow-2xl"
               >
                 <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
