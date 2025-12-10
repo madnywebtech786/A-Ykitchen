@@ -40,7 +40,7 @@ export default function Navbar() {
             <Link href="/" className="flex items-center gap-3">
               <div className="relative">
                 <Image
-                  src="/images/logo.png"
+                  src="/images/logo.jpg"
                   alt="A&Y Cabinets Logo"
                   width={200}
                   height={80}

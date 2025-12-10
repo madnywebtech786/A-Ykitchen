@@ -31,7 +31,7 @@ export default function Footer() {
             <div className="flex items-center gap-3">
               <div className="relative bg-white w-full rounded-2xl p-4">
                 <Image
-                  src="/images/logo.png"
+                  src="/images/logo.jpg"
                   alt="A&Y Cabinets Logo"
                   width={180}
                   height={180}

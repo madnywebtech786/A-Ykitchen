@@ -89,12 +89,12 @@ export default function Preloader() {
             </svg>
 
             {/* Logo */}
-            <div className="relative bg-white rounded-2xl p-6 shadow-2xl w-40 h-40 flex items-center justify-center animate-scale-pulse">
+            <div className="relative bg-white rounded-2xl p-2 shadow-2xl w-48 h-48 flex items-center justify-center animate-scale-pulse">
               <Image
-                src="/images/logo.png"
+                src="/images/logo.jpg"
                 alt="A&Y Cabinets Logo"
-                width={140}
-                height={140}
+                width={200}
+                height={200}
                 className="w-full h-full object-contain"
                 priority
               />

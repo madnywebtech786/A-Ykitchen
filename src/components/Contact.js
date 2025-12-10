@@ -12,6 +12,9 @@ export default function Contact() {
 
   const [imageFiles, setImageFiles] = useState([]);
   const [imagePreviews, setImagePreviews] = useState([]);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState(null); // 'success' or 'error'
+  const [submitMessage, setSubmitMessage] = useState('');
 
   const handleChange = (e) => {
     setFormData({
@@ -42,10 +45,73 @@ export default function Contact() {
     setImagePreviews((prev) => prev.filter((_, i) => i !== index));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Handle form submission
-    console.log('Form submitted:', formData, imageFiles);
+    setIsSubmitting(true);
+    setSubmitStatus(null);
+    setSubmitMessage('');
+
+    try {
+      // Create FormData object
+      const formDataToSend = new FormData();
+      formDataToSend.append('name', formData.name);
+      formDataToSend.append('email', formData.email);
+      formDataToSend.append('phone', formData.phone);
+      formDataToSend.append('message', formData.message);
+
+      // Append all image files
+      imageFiles.forEach((file) => {
+        formDataToSend.append('images', file);
+      });
+
+      // Send to API
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        body: formDataToSend,
+      });
+
+      const result = await response.json();
+
+      if (result.success) {
+        setSubmitStatus('success');
+        setSubmitMessage(result.message);
+
+        // Show success message for 5 seconds, then reset form
+        setTimeout(() => {
+          setFormData({
+            name: '',
+            email: '',
+            phone: '',
+            message: '',
+          });
+          setImageFiles([]);
+          setImagePreviews([]);
+          setSubmitStatus(null);
+          setSubmitMessage('');
+        }, 5000);
+      } else {
+        setSubmitStatus('error');
+        setSubmitMessage(result.message);
+
+        // Hide error message after 5 seconds
+        setTimeout(() => {
+          setSubmitStatus(null);
+          setSubmitMessage('');
+        }, 5000);
+      }
+    } catch (error) {
+      console.error('Form submission error:', error);
+      setSubmitStatus('error');
+      setSubmitMessage('Failed to send message. Please try again.');
+
+      // Hide error message after 5 seconds
+      setTimeout(() => {
+        setSubmitStatus(null);
+        setSubmitMessage('');
+      }, 5000);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const contactInfo = [
@@ -339,12 +405,49 @@ export default function Contact() {
                   ></textarea>
                 </div>
 
+                {/* Success/Error Message */}
+                {submitStatus && (
+                  <div
+                    className={`p-4 rounded-lg flex items-center gap-3 animate-fade-in ${
+                      submitStatus === 'success'
+                        ? 'bg-green-50 border-2 border-green-500'
+                        : 'bg-red-50 border-2 border-red-500'
+                    }`}
+                  >
+                    {submitStatus === 'success' ? (
+                      <svg className="w-6 h-6 text-green-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                      </svg>
+                    ) : (
+                      <svg className="w-6 h-6 text-red-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                      </svg>
+                    )}
+                    <p className={`font-semibold ${submitStatus === 'success' ? 'text-green-700' : 'text-red-700'}`}>
+                      {submitMessage}
+                    </p>
+                  </div>
+                )}
+
                 {/* Submit Button */}
                 <button
                   type="submit"
-                  className="w-full bg-gradient-to-r from-primary to-primary-dark hover:from-primary-dark hover:to-primary text-white px-8 py-4 rounded-full font-bold transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105"
+                  disabled={isSubmitting}
+                  className={`w-full bg-gradient-to-r from-primary to-primary-dark hover:from-primary-dark hover:to-primary text-white px-8 py-4 rounded-full font-bold transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 flex items-center justify-center gap-2 ${
+                    isSubmitting ? 'opacity-70 cursor-not-allowed' : ''
+                  }`}
                 >
-                  Send now
+                  {isSubmitting ? (
+                    <>
+                      <svg className="animate-spin h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                        <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                        <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                      </svg>
+                      <span>Sending...</span>
+                    </>
+                  ) : (
+                    'Send now'
+                  )}
                 </button>
               </form>
             </div>
