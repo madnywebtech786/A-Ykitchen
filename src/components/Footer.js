@@ -128,13 +128,13 @@ export default function Footer() {
                   </div>
                   <div>
                     <p className="text-xs text-gray-500 mb-1">Phone</p>
-                    <a href="tel:+14038909222" className="font-semibold hover:text-primary transition-colors block">403-890-9222</a>
-                    <a href="tel:+14039669190" className="font-semibold hover:text-primary transition-colors block">403 966 9190</a>
+                    <a href="tel:+14038909222" className="font-semibold hover:text-primary transition-colors block">403-966-9190</a>
+                    <a href="tel:+14039669190" className="font-semibold hover:text-primary transition-colors block">403-890-9222</a>
                   </div>
                 </div>
               </li>
               <li>
-                <a href="mailto:aykitchencabinets@gmail.com" className="flex items-start gap-3 text-gray-400 hover:text-primary transition-colors group">
+                <a href="mailto:info@aykitchencabinets.com" className="flex items-start gap-3 text-gray-400 hover:text-primary transition-colors group">
                   <div className="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center flex-shrink-0 group-hover:bg-primary/20 transition-colors">
                     <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
@@ -142,7 +142,7 @@ export default function Footer() {
                   </div>
                   <div>
                     <p className="text-xs text-gray-500 mb-1">Email</p>
-                    <p className="font-semibold">aykitchencabinets@gmail.com</p>
+                    <p className="font-semibold">info@aykitchencabinets.com</p>
                   </div>
                 </a>
               </li>

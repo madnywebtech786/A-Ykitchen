@@ -328,11 +328,11 @@ export async function POST(request) {
       </p>
       <p>Unit 4122 3961 52nd Ave NE, Calgary AB, T3J 0J8</p>
       <p>
-        <a href="tel:+14038909222">403-890-9222</a> |
-        <a href="tel:+14039669190">403 966 9190</a>
+        <a href="tel:+14038909222">403-966-9190</a> |
+        <a href="tel:+14039669190">403-890-9222</a>
       </p>
       <p>
-        <a href="mailto:aykitchencabinets@gmail.com">aykitchencabinets@gmail.com</a>
+        <a href="mailto:info@aykitchencabinets.com">info@aykitchencabinets.com</a>
       </p>
       <p style="margin-top: 16px; font-size: 11px;">
         This email was sent from your website contact form.

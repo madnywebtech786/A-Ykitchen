@@ -122,7 +122,7 @@ export default function Contact() {
         </svg>
       ),
       title: 'Phone',
-      value: '403-890-9222 / 403 966 9190',
+      value: '403-966-9190 / 403-890-9222',
       link: 'tel:+14038909222',
     },
     {
@@ -132,8 +132,8 @@ export default function Contact() {
         </svg>
       ),
       title: 'Email',
-      value: 'aykitchencabinets@gmail.com',
-      link: 'mailto:aykitchencabinets@gmail.com',
+      value: 'info@aykitchencabinets.com',
+      link: 'mailto:info@aykitchencabinets.com',
     },
     {
       icon: (
@@ -263,8 +263,8 @@ export default function Contact() {
                     </div>
                   </div>
                   <h4 className="text-xs font-bold text-gray-900 mb-0.5">Call</h4>
+                  <p className="text-xs text-gray-600 text-center">403-966-9190</p>
                   <p className="text-xs text-gray-600 text-center">403-890-9222</p>
-                  <p className="text-xs text-gray-600 text-center">403 966 9190</p>
                 </div>
 
                 {/* Email */}
@@ -277,7 +277,7 @@ export default function Contact() {
                     </div>
                   </div>
                   <h4 className="text-xs font-bold text-gray-900 mb-0.5">Email</h4>
-                  <p className="text-xs text-gray-600 text-center">aykitchencabinets@gmail.com</p>
+                  <p className="text-xs text-gray-600 text-center">info@aykitchencabinets.com</p>
                 </div>
 
                 {/* Location */}
