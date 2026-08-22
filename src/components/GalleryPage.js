@@ -7,8 +7,8 @@ export default function GalleryPage() {
   const [selectedImage, setSelectedImage] = useState(null);
   const [filter, setFilter] = useState('all');
 
-  // Generate gallery images array (gallery1.jpeg to gallery84.jpeg)
-  const totalImages = 83;
+  // Generate gallery images array (gallery1.jpeg to gallery87.jpeg)
+  const totalImages = 87;
   const galleryImages = Array.from({ length: totalImages }, (_, i) => ({
     id: i + 1,
     src: `/images/allImgs/gallery${i + 1}.jpeg`,
@@ -51,7 +51,7 @@ export default function GalleryPage() {
             </h1>
 
             <p className="text-xl text-gray-600 leading-relaxed mb-8">
-              Discover 84+ stunning custom kitchen cabinet projects showcasing our commitment to quality,
+              Discover 87+ stunning custom kitchen cabinet projects showcasing our commitment to quality,
               craftsmanship, and innovative design. Each project represents our dedication to transforming
               spaces into beautiful, functional works of art.
             </p>
@@ -59,7 +59,7 @@ export default function GalleryPage() {
             {/* Stats */}
             <div className="grid grid-cols-3 gap-8 max-w-3xl mx-auto">
               <div className="bg-white rounded-2xl p-6 shadow-lg border-2 border-gray-200">
-                <div className="text-4xl font-black gradient-text mb-2">84+</div>
+                <div className="text-4xl font-black gradient-text mb-2">87+</div>
                 <div className="text-sm text-gray-600 font-medium">Projects Showcased</div>
               </div>
               <div className="bg-white rounded-2xl p-6 shadow-lg border-2 border-gray-200">

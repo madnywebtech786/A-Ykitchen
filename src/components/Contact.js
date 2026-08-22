@@ -263,8 +263,8 @@ export default function Contact() {
                     </div>
                   </div>
                   <h4 className="text-xs font-bold text-gray-900 mb-0.5">Call</h4>
-                  <p className="text-xs text-gray-600 text-center">403-966-9190</p>
-                  <p className="text-xs text-gray-600 text-center">403-890-9222</p>
+                  <a href="tel:+14039669190" className="text-xs text-gray-600 text-center hover:text-primary transition-colors">403-966-9190</a>
+                  <a href="tel:+14038909222" className="text-xs text-gray-600 text-center hover:text-primary transition-colors">403-890-9222</a>
                 </div>
 
                 {/* Email */}

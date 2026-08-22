@@ -128,8 +128,8 @@ export default function Footer() {
                   </div>
                   <div>
                     <p className="text-xs text-gray-500 mb-1">Phone</p>
-                    <a href="tel:+14038909222" className="font-semibold hover:text-primary transition-colors block">403-966-9190</a>
-                    <a href="tel:+14039669190" className="font-semibold hover:text-primary transition-colors block">403-890-9222</a>
+                    <a href="tel:+14039669190" className="font-semibold hover:text-primary transition-colors block">403-966-9190</a>
+                    <a href="tel:+14038909222" className="font-semibold hover:text-primary transition-colors block">403-890-9222</a>
                   </div>
                 </div>
               </li>
