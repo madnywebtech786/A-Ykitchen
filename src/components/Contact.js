@@ -278,6 +278,7 @@ export default function Contact() {
                   </div>
                   <h4 className="text-xs font-bold text-gray-900 mb-0.5">Email</h4>
                   <p className="text-xs text-gray-600 text-center">info@aykitchencabinets.com</p>
+                  <p className="text-xs text-gray-600 text-center">aykitchencabinets@gmail.com</p>
                 </div>
 
                 {/* Location */}

@@ -134,17 +134,18 @@ export default function Footer() {
                 </div>
               </li>
               <li>
-                <a href="mailto:info@aykitchencabinets.com" className="flex items-start gap-3 text-gray-400 hover:text-primary transition-colors group">
-                  <div className="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center flex-shrink-0 group-hover:bg-primary/20 transition-colors">
+                <div className="flex items-start gap-3 text-gray-400">
+                  <div className="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center flex-shrink-0">
                     <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                     </svg>
                   </div>
                   <div>
                     <p className="text-xs text-gray-500 mb-1">Email</p>
-                    <p className="font-semibold">info@aykitchencabinets.com</p>
+                    <a href="mailto:info@aykitchencabinets.com" className="font-semibold hover:text-primary transition-colors block">info@aykitchencabinets.com</a>
+                    <a href="mailto:aykitchencabinets@gmail.com" className="font-semibold hover:text-primary transition-colors block">aykitchencabinets@gmail.com</a>
                   </div>
-                </a>
+                </div>
               </li>
               <li>
                 <a href="https://maps.google.com/?q=Unit+4122+3961+52nd+Ave+NE+Calgary+AB+T3J+0J8" target="_blank" rel="noopener noreferrer" className="flex items-start gap-3 text-gray-400 hover:text-primary transition-colors group">
